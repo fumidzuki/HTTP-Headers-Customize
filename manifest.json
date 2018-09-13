@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "HTTP Headers Customize",
+  "version": "1.0.0",
+  "description": "'HTTP Headers Customize' extension rewrite http headers based on a rules.",
+  "icons": {
+    "48": "icons/icon-off-48.svg"
+  },
+  "developer": {
+    "name": "fumidzuki",
+    "url": "https://fumidzuki.com"
+  },
+  "background": {
+    "scripts": ["scripts/background.js"]
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "HTTP Header Customize",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; object-src 'self';"
+}
