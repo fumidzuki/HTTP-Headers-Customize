@@ -11,9 +11,9 @@ var app = new Vue({
       options: []
     }
   },
-  beforeCreate: function () {
+  beforeCreate: async function () {
     const vm = this
-    browser.storage.local.get('options_enable').then(function (e) {
+    await browser.storage.local.get('options_enable').then(function (e) {
       vm.options_enable = e.options_enable ? true : false
     })
     browser.storage.local.get('options').then(function (e) {

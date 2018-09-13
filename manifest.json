@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
   "name": "HTTP Headers Customize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "'HTTP Headers Customize' extension rewrite http headers based on a rules.",
   "icons": {
     "48": "icons/icon-off-48.svg"
   },
   "developer": {
     "name": "fumidzuki",
-    "url": "https://fumidzuki.com"
+    "url": "https://github.com/fumidzuki/HTTP-Headers-Customize"
   },
   "background": {
     "scripts": ["scripts/background.js"]
