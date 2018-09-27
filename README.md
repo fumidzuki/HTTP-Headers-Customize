@@ -11,6 +11,7 @@ Extension for 'Firefox Quantum'.
 ## Requirement
 
 - 'Firefox Quantum' : 60+
+- 'nodejs' : v8.11+ (Devlopment)
 
 ## Usage
 
@@ -33,6 +34,20 @@ To create a new rule, please press the 'Add' button.
 ### Save and apply rules
 
 To save and apply your changes, please press the 'Save' button.
+
+## Devlopment
+
+### Installation
+
+```sh
+npm install
+```
+
+### Build
+
+```sh
+npm run build
+```
 
 ## Licence
 

@@ -1,17 +1,7 @@
-<!doctype html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>HTTP Header Customize - Options</title>
-  <link rel="stylesheet" href="css/vendor/bootstrap.css">
-</head>
-
-<body>
+<template>
   <div id="app" class="d-flex flex-column" style="min-height: 100vh">
     <nav class="navbar">
-      <div class="navbar-brand">HTTP Header Customizer</div>
+      <div class="navbar-brand">HTTP Headers Customizer</div>
     </nav>
     <div class="container-fluid">
       <div class="row">
@@ -75,8 +65,42 @@
       <div>&copy; 2018 fumidzuki.com</div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <script src="scripts/options.js"></script>
-</body>
+</template>
 
-</html>
+<script>
+export default {
+  data() {
+    return {
+      options: []
+    }
+  },
+  beforeCreate: async function() {
+    const vm = this
+    browser.storage.local.get('options').then(function(e) {
+      vm.options = e.options ? e.options : []
+    })
+  },
+  methods: {
+    doAdd: function() {
+      const vm = this
+      vm.options.push({
+        key: '',
+        value: '',
+        operation: '',
+        comment: '',
+        disabled: false
+      })
+    },
+    doRemove: function(index) {
+      const vm = this
+      vm.options.splice(index, 1)
+    },
+    doSave: function() {
+      const vm = this
+      browser.storage.local.set({
+        options: vm.options
+      })
+    }
+  }
+}
+</script>
